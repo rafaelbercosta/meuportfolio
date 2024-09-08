@@ -1,6 +1,7 @@
+@media (min-width: 600px) {
 body {
     font-family:sans-serif;
-    height: 2000px ;
+    height: 100%;
     background: linear-gradient(45deg, #691616, #166964, #691665 );
     background-size: 300% 300%;
     animation: colors 15s ease infinite
@@ -76,11 +77,6 @@ header {
     left: 400px;
     color: white;
 }
-
-span {
-    color: yellow;
-}
-
 .digitadoA {
     overflow: hidden;
     border-right: 2px;
@@ -95,6 +91,11 @@ span {
     animation: cursor 500ms 3s infinite normal, escrever 1.5s 2.5s steps(40) normal both;
 
 }
+
+span {
+    color: yellow;
+}
+
 
 @keyframes escrever {
     from { width: 0; }
@@ -145,12 +146,14 @@ span {
 h3 {
     font-size: 35px;
     color: white;
+
 }
 
 .historia {
     position: absolute;
     text-align: justify;
-    left: 25%;
+    left: 420px;
+
 
 }
 
@@ -177,6 +180,7 @@ h3 {
     top: 750px;
 }
 
+
 .container-projetos {
     position: relative;
     text-align: center;
@@ -185,7 +189,7 @@ h3 {
     color: white;
     width: 500px;
     display: flex;
-    left:200px;
+    left:40px;
     gap: 100px;
 }
 
@@ -201,8 +205,8 @@ h3 {
     filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
 }
 .imgProjeto {
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     border-radius: 10px;
 }
 
@@ -223,4 +227,84 @@ footer {
 .dev {
     position: relative;
     left: 30px;
+}
+}
+
+@media (max-width: 600px) {
+    body {
+        font-family:sans-serif;
+        color: white;
+        height: 100%;
+        background: linear-gradient(45deg, #691616, #166964, #691665 );
+        background-size: 300% 300%;
+        animation: colors 15s ease infinite
+
+    }
+    @keyframes colors {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+    }
+    .minhaFoto {
+        width: 50%
+    }
+    span {
+        color: yellow;
+    }
+    .digitadoA {
+        overflow: hidden;
+        border-right: 2px;
+        white-space: nowrap;
+        animation: cursor 500ms 1s normal, escrever 1.5s 1s steps(40) normal both;
+    }
+
+    .digitadoB {
+        overflow: hidden;
+        border-right: 2px;
+        white-space: nowrap;
+        animation: cursor 500ms 3s infinite normal, escrever 1.5s 2.5s steps(40) normal both;
+
+    }
+    @keyframes escrever {
+        from { width: 0; }
+        to { width: 95%; }
+      }
+
+
+
+    .imgProjeto {
+        width: 50%;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .menu {
+        margin-right: 100px;
+
+        display: flex;
+        float: right;
+        gap: 30px;
+    }
+
+    footer {
+        background-color: white;
+        color:black;
+        width: 100%;
+        font-size: smaller;
+        position: relative;
+        top: 10px
+
+    }
+
 }
