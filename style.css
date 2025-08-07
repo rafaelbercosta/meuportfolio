@@ -140,7 +140,7 @@ span {
     text-align: center;
     color: white;
     font-size:25px;
-    top: 550px;
+    top: 400px;
 }
 
 h3 {
@@ -153,17 +153,18 @@ h3 {
     position: absolute;
     text-align: justify;
     left: 420px;
-    margin-bottom: 100px;
 
 
 }
 
 .tecnologias {
     position: relative;
-    top: 1070px;
+    top: 820px;
     color: white;
     font-size:25px;
     text-align: center;
+    margin-top: 50px;
+
 }
 
 .tecImgs {
@@ -291,11 +292,15 @@ footer {
     }
 
     .menu {
-        margin-right: 100px;
+        margin-right: 90px;
 
         display: flex;
         float: right;
         gap: 30px;
+    }
+
+    .tecnologias {
+        margin-bottom: 50px;
     }
 
     footer {
