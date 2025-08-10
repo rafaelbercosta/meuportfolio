@@ -1,316 +1,295 @@
-@media (min-width: 600px) {
-body {
-    font-family:sans-serif;
-    height: 100%;
-    background: linear-gradient(45deg, #691616, #166964, #691665 );
-    background-size: 300% 300%;
-    animation: colors 15s ease infinite
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(45deg, #691616, hsl(176, 65%, 25%), #691665 );
+  background-size: 300% 300%;
+  animation: colors 15s ease infinite;
+  color: white;
 }
 
 @keyframes colors {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-header {
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    font-size:25px;
-    color: white;
-    position: fixed;
+header  {
+  background-color: hsl(176, 65%, 25%);
+  font-size: 20px;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%; /* Força o header a ter largura total */
+  box-sizing: border-box;
 }
 
 .menu {
-    margin-right: 100px;
-    font-size: 30px;
-    display: flex;
-    float: right;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 40px;
+  font-size: larger;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Espaço lateral para telas grandes */
 }
 
-.link{
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    padding: 15px 20px;
-    position: relative;
-
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+  white-space: nowrap; /* Impede quebra dos links */
 }
 
-.link:after{
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #fff;
-    transition: width 0.3 ease 0s, left 0.3s ease 0s;
-    width: 0;
+.link:after {
+  background: transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
 .link:hover::after {
-    transition: 0.5s;
-    width: 100%;
-    left: 0;
+  transition: 0.5s;
+  width: 100%;
+  left: 0;
 }
-
-
-
 
 .intro {
-    position: absolute;
-    font-size:25px;
-    top: 200px;
-    left: 400px;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 15vh;
+  text-align: center;
+  margin: 0;
+  font-size: 1.2rem;
 }
+
 .digitadoA {
-    overflow: hidden;
-    border-right: 2px;
-    white-space: nowrap;
-    animation: cursor 500ms 1s normal, escrever 1.5s 1s steps(40) normal both;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  animation: cursor 500ms 1s normal, escreverB 1.5s 1s steps(40) both;
 }
 
 .digitadoB {
-    overflow: hidden;
-    border-right: 2px;
-    white-space: nowrap;
-    animation: cursor 500ms 3s infinite normal, escrever 1.5s 2.5s steps(40) normal both;
-
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  animation: cursor 500ms 2.5s infinite step-end, escreverB 1.5s 2.5s steps(40) both;
 }
-
-span {
-    color: yellow;
-}
-
-
-@keyframes escrever {
-    from { width: 0; }
-    to { width: 100%; }
-  }
 
 @keyframes cursor {
-    from {
-        border-right: 2px solid white;
-    }
-    to {
-        border-right: transparent;
-    }
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #ffffff; }
 }
 
-
-
-/* .pcImg {
-    position:absolute;
-    right: 300px;
-    top: 100px;
-    width:600px;
-    transition: all .8s;
+@keyframes escreverB {
+  from { width: 0ch; }
+  to { width: 26ch; }
 }
-
-.pcImg:hover{
-    transform: rotateZ(-360deg) scale(1.2);
-} */
 
 .minhaFoto {
-    width: 400px;
-    transition: all .5s;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: all .5s;
 }
 
 .minhaFoto:hover {
-    transform: scale(1.05) ;
+  transform: scale(1.05);
 }
 
+span {
+  color: yellow;
+}
 
 .sobreMim {
-    position: relative;
-    text-align: center;
-    color: white;
-    font-size:25px;
-    top: 400px;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0 20px;
 }
 
-h3 {
-    font-size: 35px;
-    color: white;
+.sobreMim h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 
+.titulo-projetos {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.sobreMim h3 span {
+  color: yellow;
 }
 
 .historia {
-    position: absolute;
-    text-align: justify;
-    left: 420px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: justify;
+}
 
-
+.historia p {
+  margin-bottom: 10px;
 }
 
 .tecnologias {
-    position: relative;
-    top: 820px;
-    color: white;
-    font-size:25px;
-    text-align: center;
-    margin-top: 50px;
-
+  margin-top: 80px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .tecImgs {
-    height: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.move:hover {
-    transition: all .3s;
-    transform: scale(1.05) ;
+.tecImgs img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s;
 }
 
+.tecImgs img:hover {
+  transform: scale(1.1);
+}
+
+/* Projetos */
 .projetos {
-    position: relative;
-    text-align: center;
-    top: 750px;
+  margin-top: 80px;
+  text-align: center;
 }
 
+.projetos h3 span {
+  color: #007ACC;
+}
 
 .container-projetos {
-    position: relative;
-    text-align: center;
-    top: 50px;
-    font-size: 20px;
-    color: white;
-    width: 500px;
-    display: flex;
-    left:40px;
-    gap: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .sombra {
-    background-color: grey;
-    border-radius: 10px;
-    transition: all 0.5s;
-    cursor: pointer;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+  text-align: left;
 }
 
-.sombra:hover{
-    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
-    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+.sombra:hover {
+  transform: translateY(-5px);
 }
+
 .imgProjeto {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+.projetos a {
+  text-decoration: none;
+  color: #0d1b2a;
 }
 
 footer {
-    background-color: white;
-    left: 0px;
-    width:100%;
-    position: absolute;
-    top: 2300px;
-    display: flex;
+  text-align: center;
+  padding: 10px;
+  background-color: hsl(176, 65%, 25%);
+  margin-top: 80px;
 }
 
-.dev {
-    position: relative;
-    left: 30px;
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+    align-items: center;
+    gap: 10px;
+    font-size: 90%;
+    background: transparent !important;
+    width: 100%;
+    padding: 0 10px;
+    justify-content: center;
+  }
+
+  .tecImgs img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .minhaFoto {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tecnologias {
+    margin-top: 80px;
+    text-align: center;
+    font-size: medium;
+  }
+
+  .sobreMim {
+    font-size: small;
+  }
+
+  .titulo-projetos {
+    font-size: larger;
+    text-align: center;
+  }
+
+  .container-projetos {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eu {
+    font-size: 18px;
+  }
+
+  .projetos {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
+@media (max-width: 480px) {
+  .digitadoA,
+  .digitadoB {
+    font-size: 1.2rem;
+  }
 }
 
-@media (max-width: 600px) {
-    body {
-        font-family:sans-serif;
-        color: white;
-        height: 100%;
-        background: linear-gradient(45deg, #691616, #166964, #691665 );
-        background-size: 300% 300%;
-        animation: colors 15s ease infinite
-
-    }
-    @keyframes colors {
-        0% {
-          background-position: 0% 50%;
-        }
-
-        50% {
-          background-position: 100% 50%;
-        }
-
-        100% {
-          background-position: 0% 50%;
-        }
-    }
-    .minhaFoto {
-        width: 50%
-    }
-    span {
-        color: yellow;
-    }
-    .digitadoA {
-        overflow: hidden;
-        border-right: 2px;
-        white-space: nowrap;
-        animation: cursor 500ms 1s normal, escrever 1.5s 1s steps(40) normal both;
-    }
-
-    .digitadoB {
-        overflow: hidden;
-        border-right: 2px;
-        white-space: nowrap;
-        animation: cursor 500ms 3s infinite normal, escrever 1.5s 2.5s steps(40) normal both;
-
-    }
-    @keyframes escrever {
-        from { width: 0; }
-        to { width: 95%; }
-      }
-
-
-
-    .imgProjeto {
-        width: 50%;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    .menu {
-        margin-right: 90px;
-
-        display: flex;
-        float: right;
-        gap: 30px;
-    }
-
-    .tecnologias {
-        margin-bottom: 50px;
-    }
-
-    footer {
-        background-color: white;
-        color:black;
-        width: 100%;
-        font-size: smaller;
-        position: relative;
-        top: 10px
-
-    }
-
-}
