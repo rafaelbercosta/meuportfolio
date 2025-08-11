@@ -26,7 +26,7 @@ header  {
   position: sticky;
   top: 0;
   z-index: 1000;
-  width: 100%; /* Força o header a ter largura total */
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -40,7 +40,7 @@ header  {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px; /* Espaço lateral para telas grandes */
+  padding: 0 20px;
 }
 
 .link {
@@ -49,7 +49,7 @@ header  {
   display: inline-block;
   padding: 15px 20px;
   position: relative;
-  white-space: nowrap; /* Impede quebra dos links */
+  white-space: nowrap;
 }
 
 .link:after {
@@ -127,7 +127,7 @@ span {
   margin-top: 80px;
   text-align: center;
   font-size: 1.5rem;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .sobreMim h3 {
@@ -157,7 +157,11 @@ span {
 .tecnologias {
   margin-top: 80px;
   text-align: center;
-  font-size: 30px;
+
+}
+
+h4 {
+    font-size: 25px;
 }
 
 .tecImgs {
@@ -178,7 +182,7 @@ span {
   transform: scale(1.1);
 }
 
-/* Projetos */
+
 .projetos {
   margin-top: 80px;
   text-align: center;
@@ -186,10 +190,6 @@ span {
 
 .projetos h3 span {
   color: #007ACC;
-}
-
-h4 {
-    font-size: 25px;
 }
 
 .container-projetos {
@@ -235,7 +235,7 @@ footer {
   margin-top: 80px;
 }
 
-/* MEDIA QUERIES */
+
 @media (max-width: 768px) {
   .menu {
     align-items: center;
@@ -260,12 +260,15 @@ footer {
   .tecnologias {
     margin-top: 80px;
     text-align: center;
-    font-size: medium;
+  }
+
+  .tecnologias h4 {
+    font-size: 13px;
   }
 
   .sobreMim {
     font-size: small;
-     margin-top: 0;
+    margin-top: 0;
   }
 
   .titulo-projetos {
@@ -283,7 +286,9 @@ footer {
   .eu {
     font-size: 18px;
   }
-
+  h4{
+    font-size: 15px;
+  }
   .projetos {
     max-width: 90%;
     margin-left: auto;
@@ -297,4 +302,3 @@ footer {
     font-size: 1.2rem;
   }
 }
-
