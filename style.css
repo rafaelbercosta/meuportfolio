@@ -188,6 +188,10 @@ span {
   color: #007ACC;
 }
 
+h4 {
+    font-size: 25px;
+}
+
 .container-projetos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
