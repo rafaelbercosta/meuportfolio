@@ -1,316 +1,569 @@
-@media (min-width: 600px) {
+/* ===========================================
+   RESET E CONFIGURAÇÕES GERAIS
+   =========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family:sans-serif;
-    height: 100%;
-    background: linear-gradient(45deg, #691616, #166964, #691665 );
-    background-size: 300% 300%;
-    animation: colors 15s ease infinite
-
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(45deg, #691616, hsl(176, 65%, 25%), #691665);
+  background-size: 300% 300%;
+  animation: colors 15s ease infinite;
+  color: white;
 }
 
+/* ===========================================
+   ANIMAÇÕES GLOBAIS
+   =========================================== */
 @keyframes colors {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+@keyframes cursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #ffffff; }
+}
+
+@keyframes escreverB {
+  from { width: 0ch; }
+  to { width: 26ch; }
+}
+
+/* ===========================================
+   ELEMENTOS GLOBAIS
+   =========================================== */
+span {
+  color: yellow;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+/* ===========================================
+   HEADER E NAVEGAÇÃO
+   =========================================== */
 header {
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    font-size:25px;
-    color: white;
-    position: fixed;
+  background-color: hsl(176, 65%, 25%);
+  font-size: 20px;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .menu {
-    margin-right: 100px;
-    font-size: 30px;
-    display: flex;
-    float: right;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 40px;
+  font-size: larger;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.link{
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    padding: 15px 20px;
-    position: relative;
-
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+  white-space: nowrap;
 }
 
-.link:after{
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #fff;
-    transition: width 0.3 ease 0s, left 0.3s ease 0s;
-    width: 0;
+.link:after {
+  background: transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
 
 .link:hover::after {
-    transition: 0.5s;
-    width: 100%;
-    left: 0;
+  transition: 0.5s;
+  width: 100%;
+  left: 0;
 }
 
-
-
-
+/* ===========================================
+   SEÇÃO INTRO
+   =========================================== */
 .intro {
-    position: absolute;
-    font-size:25px;
-    top: 200px;
-    left: 400px;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 15vh;
+  text-align: center;
+  margin: 0;
+  font-size: 1.2rem;
 }
+
 .digitadoA {
-    overflow: hidden;
-    border-right: 2px;
-    white-space: nowrap;
-    animation: cursor 500ms 1s normal, escrever 1.5s 1s steps(40) normal both;
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  animation: cursor 500ms 1s normal, escreverB 1.5s 1s steps(40) both;
 }
 
 .digitadoB {
-    overflow: hidden;
-    border-right: 2px;
-    white-space: nowrap;
-    animation: cursor 500ms 3s infinite normal, escrever 1.5s 2.5s steps(40) normal both;
-
+  overflow: hidden;
+  border-right: 2px solid transparent;
+  white-space: nowrap;
+  animation: cursor 500ms 2.5s infinite step-end, escreverB 1.5s 2.5s steps(40) both;
 }
 
-span {
-    color: yellow;
-}
-
-
-@keyframes escrever {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-
-@keyframes cursor {
-    from {
-        border-right: 2px solid white;
-    }
-    to {
-        border-right: transparent;
-    }
-}
-
-
-
-/* .pcImg {
-    position:absolute;
-    right: 300px;
-    top: 100px;
-    width:600px;
-    transition: all .8s;
-}
-
-.pcImg:hover{
-    transform: rotateZ(-360deg) scale(1.2);
-} */
-
-.minhaFoto {
-    width: 400px;
-    transition: all .5s;
-}
-
-.minhaFoto:hover {
-    transform: scale(1.05) ;
-}
-
-
+/* ===========================================
+   SEÇÃO SOBRE MIM
+   =========================================== */
 .sobreMim {
-    position: relative;
-    text-align: center;
-    color: white;
-    font-size:25px;
-    top: 400px;
+  margin-top: 80px;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0 30px;
 }
 
-h3 {
-    font-size: 35px;
-    color: white;
+.sobreMim h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 
+.sobreMim h3 span {
+  color: yellow;
 }
 
 .historia {
-    position: absolute;
-    text-align: justify;
-    left: 420px;
-
-
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: justify;
 }
 
-.tecnologias {
-    position: relative;
-    top: 820px;
-    color: white;
-    font-size:25px;
-    text-align: center;
-    margin-top: 50px;
+.historia p {
+  margin-bottom: 10px;
+}
 
+.minhaFoto {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: all .5s;
+}
+
+.minhaFoto:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================================
+   SEÇÃO TECNOLOGIAS
+   =========================================== */
+.tecnologias {
+  margin-top: 80px;
+  text-align: center;
 }
 
 .tecImgs {
-    height: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.move:hover {
-    transition: all .3s;
-    transform: scale(1.05) ;
+.tecImgs img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  transition: transform 0.3s;
 }
 
+.tecImgs img:hover {
+  transform: scale(1.1);
+}
+
+/* ===========================================
+   SEÇÃO TREINO TECH
+   =========================================== */
+.treino-tech-section {
+  margin-top: 80px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.treino-tech-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.treino-tech-link {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.treino-tech-link:hover {
+  transform: scale(1.02);
+}
+
+.treino-tech-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.treino-tech-link:hover .treino-tech-overlay {
+  opacity: 1;
+}
+
+.treino-tech-link-text {
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.treino-tech-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.treino-tech-image:hover {
+  transform: scale(1.02);
+}
+
+.treino-tech-content {
+  text-align: left;
+  color: white;
+}
+
+.treino-tech-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.treino-tech-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.treino-tech-stack,
+.treino-tech-features,
+.treino-tech-result,
+.treino-tech-note {
+  margin-bottom: 25px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #FFFFFF;
+}
+
+.treino-tech-stack h4,
+.treino-tech-features h4,
+.treino-tech-result h4 {
+  color: #FFFFFF;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.treino-tech-stack p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.treino-tech-features ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.treino-tech-features li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.treino-tech-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.treino-tech-result p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.treino-tech-note {
+  background-color: rgba(255, 193, 7, 0.1);
+  border-left-color: #ffc107;
+}
+
+.treino-tech-note p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ===========================================
+   SEÇÃO PROJETOS
+   =========================================== */
 .projetos {
-    position: relative;
-    text-align: center;
-    top: 750px;
+  margin-top: 80px;
+  text-align: center;
 }
 
+.projetos h3 span {
+  color: #007ACC;
+}
+
+.titulo-projetos {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
 
 .container-projetos {
-    position: relative;
-    text-align: center;
-    top: 50px;
-    font-size: 20px;
-    color: white;
-    width: 500px;
-    display: flex;
-    left:40px;
-    gap: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .sombra {
-    background-color: grey;
-    border-radius: 10px;
-    transition: all 0.5s;
-    cursor: pointer;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s;
+  text-align: left;
 }
 
-.sombra:hover{
-    -webkit-filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
-    filter: drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+.sombra:hover {
+  transform: translateY(-5px);
 }
+
 .imgProjeto {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 15px;
 }
 
-a {
-    text-decoration: none;
-    color: white;
+.projetos a {
+  text-decoration: none;
+  color: #0d1b2a;
 }
 
+/* ===========================================
+   FOOTER
+   =========================================== */
 footer {
-    background-color: white;
-    left: 0px;
-    width:100%;
-    position: absolute;
-    top: 2300px;
-    display: flex;
+  text-align: center;
+  padding: 10px;
+  background-color: hsl(176, 65%, 25%);
+  margin-top: 80px;
 }
 
-.dev {
-    position: relative;
-    left: 30px;
+/* ===========================================
+   RESPONSIVIDADE - TABLET (768px)
+   =========================================== */
+@media (max-width: 768px) {
+  .menu {
+    align-items: center;
+    gap: 10px;
+    font-size: 90%;
+    background: transparent !important;
+    width: 100%;
+    padding: 0 10px;
+    justify-content: center;
+  }
+
+  .tecImgs {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    grid-template-rows: 1fr 1fr !important;
+    gap: 8px !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+  }
+
+  .tecImgs img {
+    width: 100% !important;
+    height: 25px !important;
+  }
+
+  .minhaFoto {
+    width: 140px;
+    height: 140px;
+  }
+
+  .tecnologias {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .tecnologias h4 {
+    margin-bottom: 30px !important;
+  }
+
+  .tecnologias h4 {
+    font-size: 13px;
+  }
+
+  .sobreMim {
+    font-size: small;
+    margin-top: 0;
+  }
+
+  .titulo-projetos {
+    font-size: larger;
+    text-align: center;
+  }
+
+  .container-projetos {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .eu {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 15px;
+  }
+
+  .projetos {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Responsividade para TreinoTech */
+  .treino-tech-section {
+    margin-top: 40px;
+    padding: 20px 10px;
+  }
+
+  .treino-tech-container {
+    padding: 20px;
+  }
+
+  .treino-tech-title {
+    font-size: 1.5rem;
+  }
+
+  .treino-tech-description {
+    font-size: 1rem;
+  }
+
+  .treino-tech-stack h4,
+  .treino-tech-features h4,
+  .treino-tech-result h4 {
+    font-size: 1.1rem;
+  }
+
+  .treino-tech-stack,
+  .treino-tech-features,
+  .treino-tech-result,
+  .treino-tech-note {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
 }
-}
 
-@media (max-width: 600px) {
-    body {
-        font-family:sans-serif;
-        color: white;
-        height: 100%;
-        background: linear-gradient(45deg, #691616, #166964, #691665 );
-        background-size: 300% 300%;
-        animation: colors 15s ease infinite
+/* ===========================================
+   RESPONSIVIDADE - MOBILE (480px)
+   =========================================== */
+@media (max-width: 480px) {
+  .digitadoA,
+  .digitadoB {
+    font-size: 1.2rem;
+  }
 
-    }
-    @keyframes colors {
-        0% {
-          background-position: 0% 50%;
-        }
+  /* Responsividade adicional para TreinoTech em telas pequenas */
+  .treino-tech-title {
+    font-size: 1.3rem;
+  }
 
-        50% {
-          background-position: 100% 50%;
-        }
+  .treino-tech-description {
+    font-size: 0.95rem;
+  }
 
-        100% {
-          background-position: 0% 50%;
-        }
-    }
-    .minhaFoto {
-        width: 50%
-    }
-    span {
-        color: yellow;
-    }
-    .digitadoA {
-        overflow: hidden;
-        border-right: 2px;
-        white-space: nowrap;
-        animation: cursor 500ms 1s normal, escrever 1.5s 1s steps(40) normal both;
-    }
+  .treino-tech-stack h4,
+  .treino-tech-features h4,
+  .treino-tech-result h4 {
+    font-size: 1rem;
+  }
 
-    .digitadoB {
-        overflow: hidden;
-        border-right: 2px;
-        white-space: nowrap;
-        animation: cursor 500ms 3s infinite normal, escrever 1.5s 2.5s steps(40) normal both;
+  .treino-tech-stack,
+  .treino-tech-features,
+  .treino-tech-result,
+  .treino-tech-note {
+    padding: 10px;
+    margin-bottom: 15px;
+  }
 
-    }
-    @keyframes escrever {
-        from { width: 0; }
-        to { width: 95%; }
-      }
+  .treino-tech-container {
+    padding: 15px;
+  }
 
+  /* Tecnologias em telas muito pequenas */
+  .tecImgs {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2;
+    gap: 6px;
+    max-width: 200px;
+    margin: 0 auto;
+  }
 
-
-    .imgProjeto {
-        width: 50%;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    .menu {
-        margin-right: 90px;
-
-        display: flex;
-        float: right;
-        gap: 30px;
-    }
-
-    .tecnologias {
-        margin-bottom: 50px;
-    }
-
-    footer {
-        background-color: white;
-        color:black;
-        width: 100%;
-        font-size: smaller;
-        position: relative;
-        top: 10px
-
-    }
-
+  .tecImgs img {
+    height: 18px !important;
+  }
 }
