@@ -12,6 +12,7 @@ body {
   background-size: 300% 300%;
   animation: colors 15s ease infinite;
   color: white;
+  overflow-x: hidden;
 }
 
 
@@ -63,7 +64,7 @@ header {
   flex-direction: row;
   gap: 40px;
   font-size: larger;
-  width: 100%;
+  width: 100vw;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
