@@ -1,6 +1,4 @@
-/* ===========================================
-   RESET E CONFIGURAÇÕES GERAIS
-   =========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +6,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   background: linear-gradient(45deg, #691616, hsl(176, 65%, 25%), #691665);
   background-size: 300% 300%;
@@ -16,9 +14,7 @@ body {
   color: white;
 }
 
-/* ===========================================
-   ANIMAÇÕES GLOBAIS
-   =========================================== */
+
 @keyframes colors {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -32,7 +28,7 @@ body {
 
 @keyframes escreverB {
   from { width: 0ch; }
-  to { width: 26ch; }
+  to { width: 24ch; }
 }
 
 /* ===========================================
@@ -105,6 +101,7 @@ header {
    SEÇÃO INTRO
    =========================================== */
 .intro {
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -451,11 +448,11 @@ footer {
   }
 
   .tecnologias h4 {
-    font-size: 13px;
+    font-size: 1.1rem;
   }
 
   .sobreMim {
-    font-size: small;
+    font-size: 0.95rem;
     margin-top: 0;
   }
 
@@ -476,7 +473,7 @@ footer {
   }
 
   h4 {
-    font-size: 15px;
+    font-size: 1.5rem;
   }
 
   .projetos {
@@ -518,16 +515,15 @@ footer {
   }
 }
 
-/* ===========================================
-   RESPONSIVIDADE - MOBILE (480px)
-   =========================================== */
+
 @media (max-width: 480px) {
+
   .digitadoA,
   .digitadoB {
     font-size: 1.2rem;
   }
 
-  /* Responsividade adicional para TreinoTech em telas pequenas */
+
   .treino-tech-title {
     font-size: 1.3rem;
   }
@@ -554,7 +550,7 @@ footer {
     padding: 15px;
   }
 
-  /* Tecnologias em telas muito pequenas */
+
   .tecImgs {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 2;
