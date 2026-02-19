@@ -15,6 +15,12 @@ body {
   overflow-x: hidden;
 }
 
+.container-padrao {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 
 @keyframes colors {
   0% { background-position: 0% 50%; }
@@ -178,17 +184,20 @@ header {
 }
 
 .tecImgs {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
+  max-width: 700px;
+    margin: 40px auto 0 auto;
 }
 
 .tecImgs img {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 80px;
   object-fit: contain;
   transition: transform 0.3s;
+  margin-bottom: 0;
 }
 
 .tecImgs img:hover {
@@ -403,6 +412,12 @@ footer {
   padding: 10px;
   background-color: hsl(176, 65%, 25%);
   margin-top: 80px;
+}
+
+@media (min-width: 1024px) {
+   h4 {
+    font-size: 30px;
+  }
 }
 
 /* ===========================================
