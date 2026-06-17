@@ -468,7 +468,7 @@ footer {
   }
 
   .sobreMim {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-top: 0;
   }
 
@@ -496,6 +496,15 @@ footer {
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+
+
+  .historia p{
+    text-align: justify;
+     text-justify: inter-word;
+      word-spacing: -0.05em;
+
   }
 
   /* Responsividade para TreinoTech */
